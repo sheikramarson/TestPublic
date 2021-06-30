@@ -161,11 +161,15 @@
                     <PropertyDefinition
                      aspect.cacheTime="0.0"
                      aspect.dataChangeType="VALUE"
-                     baseType="STRING"
+                     aspect.defaultValue="23.0"
+                     aspect.isLogged="true"
+                     aspect.isPersistent="true"
+                     aspect.isRemote="true"
+                     baseType="NUMBER"
                      category=""
                      description=""
                      isLocalOnly="false"
-                     name="value"
+                     name="test"
                      ordinal="3"></PropertyDefinition>
                 </PropertyDefinitions>
                 <ServiceDefinitions></ServiceDefinitions>
@@ -248,6 +252,16 @@
                  pushType="VALUE"
                  sourceName="Temperature"
                  timeout="0"></RemotePropertyBinding>
+                <RemotePropertyBinding
+                 aspect.source=""
+                 aspect.startType="useDefaultValue"
+                 aspect.tagAddress=""
+                 foldType="NONE"
+                 name="test"
+                 pushThreshold="0.0"
+                 pushType="VALUE"
+                 sourceName=""
+                 timeout="0"></RemotePropertyBinding>
             </RemotePropertyBindings>
             <RemoteServiceBindings></RemoteServiceBindings>
             <RemoteEventBindings>
@@ -259,7 +273,7 @@
                 <AlertDefinitions
                  name="Temperature"></AlertDefinitions>
                 <AlertDefinitions
-                 name="value"></AlertDefinitions>
+                 name="test"></AlertDefinitions>
             </AlertConfigurations>
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
@@ -287,6 +301,11 @@
                     <Timestamp>2021-06-21T06:36:58.640Z</Timestamp>
                     <Quality>UNKNOWN</Quality>
                 </Temperature>
+                <test>
+                    <Value>23.0</Value>
+                    <Timestamp>1970-01-01T00:00:00.000Z</Timestamp>
+                    <Quality>UNKNOWN</Quality>
+                </test>
             </ThingProperties>
         </Thing>
     </Things>
