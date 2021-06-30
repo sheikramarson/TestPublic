@@ -158,6 +158,15 @@
                      isLocalOnly="false"
                      name="Temperature"
                      ordinal="2"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="value"
+                     ordinal="3"></PropertyDefinition>
                 </PropertyDefinitions>
                 <ServiceDefinitions></ServiceDefinitions>
                 <EventDefinitions>
@@ -249,6 +258,8 @@
             <AlertConfigurations>
                 <AlertDefinitions
                  name="Temperature"></AlertDefinitions>
+                <AlertDefinitions
+                 name="value"></AlertDefinitions>
             </AlertConfigurations>
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
