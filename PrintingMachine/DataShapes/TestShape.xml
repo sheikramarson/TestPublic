@@ -28,7 +28,7 @@
             <ConfigurationTables></ConfigurationTables>
             <FieldDefinitions>
                 <FieldDefinition
-                 aspect.defaultValue="dummy"
+                 aspect.defaultValue="changed"
                  aspect.isPrimaryKey="false"
                  baseType="STRING"
                  description="dd"
