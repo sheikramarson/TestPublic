@@ -278,27 +278,27 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-06-21T06:54:57.756Z</Value>
-                    <Timestamp>2021-06-21T06:54:57.756Z</Timestamp>
+                    <Value>2021-06-30T06:14:13.036Z</Value>
+                    <Timestamp>2021-06-30T06:14:13.036Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-06-21T06:54:57.756Z</Value>
-                    <Timestamp>2021-06-21T06:54:57.756Z</Timestamp>
+                    <Value>2021-06-30T06:14:13.036Z</Value>
+                    <Timestamp>2021-06-30T06:14:13.036Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-06-21T06:44:06.094Z</Value>
-                    <Timestamp>2021-06-21T06:44:06.094Z</Timestamp>
+                    <Value>2021-06-30T06:14:13.034Z</Value>
+                    <Timestamp>2021-06-30T06:14:13.035Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <Temperature>
                     <Value>
                     <![CDATA[
-                    28.0
+                    43.0
                     ]]>
                     </Value>
-                    <Timestamp>2021-06-21T06:36:58.640Z</Timestamp>
+                    <Timestamp>2021-06-30T06:14:26.544Z</Timestamp>
                     <Quality>UNKNOWN</Quality>
                 </Temperature>
                 <test>
