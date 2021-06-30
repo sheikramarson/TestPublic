@@ -10,7 +10,7 @@
          effectiveThingPackage="RemoteThingWithTunnelsAndFileTransfer"
          enabled="true"
          homeMashup=""
-         identifier="SN0001"
+         identifier=""
          inheritedValueStream=""
          name="PrintheadTemperature"
          projectName="PrintingMachine"
