@@ -28,6 +28,13 @@
             <ConfigurationTables></ConfigurationTables>
             <FieldDefinitions>
                 <FieldDefinition
+                 aspect.defaultValue="dummy"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description="dd"
+                 name="id"
+                 ordinal="2"></FieldDefinition>
+                <FieldDefinition
                  aspect.friendlyName="message"
                  aspect.isPrimaryKey="false"
                  baseType="STRING"
