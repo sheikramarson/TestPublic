@@ -159,11 +159,197 @@
                      name="AppConfig"
                      ordinal="2"></PropertyDefinition>
                 </PropertyDefinitions>
-                <ServiceDefinitions></ServiceDefinitions>
-                <EventDefinitions></EventDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="test push "
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="TeshPush">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="MessageInfo"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="test"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="Test">
+                        <ResultType
+                         baseType="NUMBER"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description=""
+                             name="Input1"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description=""
+                             name="Input2"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions>
+                    <EventDefinition
+                     category=""
+                     dataShape="TestShape"
+                     description=""
+                     name="TestEvent"></EventDefinition>
+                </EventDefinitions>
                 <ServiceMappings></ServiceMappings>
-                <ServiceImplementations></ServiceImplementations>
-                <Subscriptions></Subscriptions>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="TeshPush">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             dataShapeName=""
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var entities = Things["GIT.Utility.Thing"].GetProjectEntities({
+                                        	project: "PrintingMachine" /* STRING */,
+                                        	entityName: "Configuration" /* STRING */,
+                                        	entityType: "Thing" /* STRING */
+                                        });
+                                        
+                                        var ex = Things["GitBackup"].ExportProjectEntities({
+                                        	ProjectName: "PrintingMachine" /* STRING */,
+                                        	includeDependents: true /* BOOLEAN */,
+                                        	EntitiesToExport: entities /* INFOTABLE */
+                                        });
+                                        
+                                        // Result: STRING
+                                        Things["GitBackup"].Push({
+                                        	Message: MessageInfo /* STRING */
+                                        });
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="Test">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             dataShapeName=""
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // result: NUMBER
+                                        let result = Things["SteamSensor1"].AddNumbers({
+                                        	a: Input1/* NUMBER */,
+                                        	b: Input2/* NUMBER */
+                                        });
+                                        
+                                        me.TestEvent({
+                                        	message: "Test service" /* STRING */
+                                        });
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions>
+                    <Subscription
+                     description=""
+                     enabled="true"
+                     eventName="TestEvent"
+                     name="TestSubscription"
+                     source=""
+                     sourceProperty=""
+                     sourceType="Thing">
+                        <ServiceImplementation
+                         description=""
+                         handlerName="Script"
+                         name="TestSubscription">
+                            <ConfigurationTables>
+                                <ConfigurationTable
+                                 dataShapeName=""
+                                 description=""
+                                 isMultiRow="false"
+                                 name="Script"
+                                 ordinal="0">
+                                    <DataShape>
+                                        <FieldDefinitions>
+                                            <FieldDefinition
+                                             baseType="STRING"
+                                             description="code"
+                                             name="code"
+                                             ordinal="0"></FieldDefinition>
+                                        </FieldDefinitions>
+                                    </DataShape>
+                                    <Rows>
+                                        <Row>
+                                            <code>
+                                            <![CDATA[
+                                            logger.warn(eventData.message);
+                                            ]]>
+                                            </code>
+                                        </Row>
+                                    </Rows>
+                                </ConfigurationTable>
+                            </ConfigurationTables>
+                        </ServiceImplementation>
+                    </Subscription>
+                </Subscriptions>
             </ThingShape>
             <PropertyBindings></PropertyBindings>
             <RemotePropertyBindings>
@@ -179,7 +365,11 @@
                  timeout="0"></RemotePropertyBinding>
             </RemotePropertyBindings>
             <RemoteServiceBindings></RemoteServiceBindings>
-            <RemoteEventBindings></RemoteEventBindings>
+            <RemoteEventBindings>
+                <RemoteEventBinding
+                 name="TestEvent"
+                 sourceName=""></RemoteEventBinding>
+            </RemoteEventBindings>
             <AlertConfigurations>
                 <AlertDefinitions
                  name="AppConfig"></AlertDefinitions>
