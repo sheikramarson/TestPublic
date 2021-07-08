@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ majorVersion="9"
+ minorVersion="1"
+ universal="password">
+    <Things>
+        <Thing
+         description=""
+         documentationContent=""
+         effectiveThingPackage="RemoteThingWithTunnelsAndFileTransfer"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         inheritedValueStream=""
+         name="GITExtensionThing"
+         projectName="PTCDefaultProject"
+         published="false"
+         tags=""
+         thingTemplate="RemoteThingWithTunnelsAndFileTransfer"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables>
+                <ConfigurationTable
+                 dataShapeName=""
+                 description="Reporting Settings"
+                 isMultiRow="false"
+                 name="ReportingConfiguration"
+                 ordinal="0">
+                    <DataShape>
+                        <FieldDefinitions>
+                            <FieldDefinition
+                             aspect.defaultValue="NotReporting"
+                             aspect.isPrimaryKey="true"
+                             aspect.isReadOnly="false"
+                             aspect.thingTemplate="ReportingStrategy"
+                             baseType="THINGNAME"
+                             description="Strategy to determine health"
+                             name="reportingStrategy"
+                             ordinal="1"></FieldDefinition>
+                        </FieldDefinitions>
+                    </DataShape>
+                    <Rows>
+                        <Row>
+                            <reportingStrategy>
+                            <![CDATA[
+                            AlwaysOnReporting
+                            ]]>
+                            </reportingStrategy>
+                        </Row>
+                    </Rows>
+                </ConfigurationTable>
+                <ConfigurationTable
+                 dataShapeName=""
+                 description="General Settings"
+                 isMultiRow="false"
+                 name="TunnelSettings"
+                 ordinal="0">
+                    <DataShape>
+                        <FieldDefinitions>
+                            <FieldDefinition
+                             aspect.friendlyName="Enable Tunneling"
+                             aspect.isNullable="true"
+                             baseType="BOOLEAN"
+                             description="Enable tunneling"
+                             name="enableTunneling"
+                             ordinal="0"></FieldDefinition>
+                        </FieldDefinitions>
+                    </DataShape>
+                    <Rows>
+                        <Row></Row>
+                    </Rows>
+                </ConfigurationTable>
+                <ConfigurationTable
+                 dataShapeName=""
+                 description="Tunneling Destinations"
+                 isMultiRow="true"
+                 name="Tunnels"
+                 ordinal="1">
+                    <DataShape>
+                        <FieldDefinitions>
+                            <FieldDefinition
+                             aspect.defaultValue=""
+                             aspect.friendlyName="Application Path"
+                             baseType="STRING"
+                             description="Location of the client app that will use this tunnel"
+                             name="appUri"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue=""
+                             aspect.friendlyName="Description"
+                             baseType="STRING"
+                             description="A description of the tunnel"
+                             name="description"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="127.0.0.1"
+                             aspect.friendlyName="Host"
+                             baseType="STRING"
+                             description="Host or IP that this tunnel will connect to at the edge"
+                             name="host"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="vnc"
+                             aspect.friendlyName="Name"
+                             baseType="STRING"
+                             description="Name of the tunnel"
+                             name="name"
+                             ordinal="0"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="1.0"
+                             aspect.friendlyName="Number of Connects"
+                             baseType="NUMBER"
+                             description="The number of connections required to establish this tunnel"
+                             name="numConnects"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="5900.0"
+                             aspect.friendlyName="Port"
+                             baseType="NUMBER"
+                             description="Port that this tunnel will connect to at the edge"
+                             name="port"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.defaultValue="tcp"
+                             aspect.friendlyName="Protocol"
+                             baseType="STRING"
+                             description="The protocol used over this tunnel"
+                             name="proto"
+                             ordinal="6"></FieldDefinition>
+                        </FieldDefinitions>
+                    </DataShape>
+                    <Rows></Rows>
+                </ConfigurationTable>
+            </ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions></PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Push the content to GIT repository"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="ExternalPush">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="message"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="ExternalPush">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             dataShapeName=""
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var entities = Things["GIT.Utility.Thing"].GetProjectEntities({
+                                        	project: "PTCDefaultProject" /* STRING */,
+                                        	entityName: "GITExtensionThing" /* STRING */,
+                                        	entityType: "Thing" /* STRING */
+                                        });
+                                        
+                                        var ex = Things["GITExtension"].ExportProjectEntities({
+                                        	ProjectName: "PTCDefaultProject" /* STRING */,
+                                        	includeDependents: true /* BOOLEAN */,
+                                        	EntitiesToExport: entities /* INFOTABLE */
+                                        });
+                                        
+                                        // Result: STRING
+                                        var result = Things["GITExtension"].Push({
+                                        	Message: message /* STRING */
+                                        });
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations></AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <reportingLastEvaluation>
+                    <Value>1970-01-01T00:00:00.000Z</Value>
+                    <Timestamp>1970-01-01T00:00:00.000Z</Timestamp>
+                    <Quality>UNKNOWN</Quality>
+                </reportingLastEvaluation>
+                <reportingLastChange>
+                    <Value>1970-01-01T00:00:00.000Z</Value>
+                    <Timestamp>1970-01-01T00:00:00.000Z</Timestamp>
+                    <Quality>UNKNOWN</Quality>
+                </reportingLastChange>
+                <lastConnection>
+                    <Value>1970-01-01T00:00:00.000Z</Value>
+                    <Timestamp>1970-01-01T00:00:00.000Z</Timestamp>
+                    <Quality>UNKNOWN</Quality>
+                </lastConnection>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>
