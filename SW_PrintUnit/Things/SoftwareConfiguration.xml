@@ -222,14 +222,14 @@
                                         	entityType: "Thing" /* STRING */
                                         });
                                         
-                                        var ex = Things["TestGIT"].ExportProjectEntities({
+                                        var ex = Things["TestGit"].ExportProjectEntities({
                                         	ProjectName: "SW_PrintUnit" /* STRING */,
-                                        	includeDependents: false /* BOOLEAN */,
+                                        	includeDependents: true /* BOOLEAN */,
                                         	EntitiesToExport: entities /* INFOTABLE */
                                         });
                                         
                                         // Result: STRING
-                                        var result = Things["TestGIT"].Push({
+                                        var result = Things["TestGit"].Push({
                                         	Message: MessageInfo /* STRING */
                                         });
                                         ]]>
