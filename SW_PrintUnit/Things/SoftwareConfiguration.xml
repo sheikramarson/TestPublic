@@ -216,21 +216,24 @@
                                     <Row>
                                         <code>
                                         <![CDATA[
-                                        var entities = Things["GIT.Utility.Thing"].GetProjectEntities({
-                                        	project: "SW_PrintUnit" /* STRING */,
-                                        	entityName: "SoftwareConfiguration" /* STRING */,
-                                        	entityType: "Thing" /* STRING */
-                                        });
-                                        
-                                        var ex = Things["TestGit"].ExportProjectEntities({
-                                        	ProjectName: "SW_PrintUnit" /* STRING */,
-                                        	includeDependents: true /* BOOLEAN */,
-                                        	EntitiesToExport: entities /* INFOTABLE */
-                                        });
-                                        
-                                        // Result: STRING
-                                        var result = Things["TestGit"].Push({
-                                        	Message: MessageInfo /* STRING */
+                                        //var entities = Things["GIT.Utility.Thing"].GetProjectEntities({
+                                        //	project: "SW_PrintUnit" /* STRING */,
+                                        //	entityName: "SoftwareConfiguration" /* STRING */,
+                                        //	entityType: "Thing" /* STRING */
+                                        //});
+                                        //
+                                        //var ex = Things["TestGit"].ExportProjectEntities({
+                                        //	ProjectName: "SW_PrintUnit" /* STRING */,
+                                        //	includeDependents: false /* BOOLEAN */,
+                                        //	EntitiesToExport: entities /* INFOTABLE */
+                                        //});
+                                        //
+                                        //// Result: STRING
+                                        //var result = Things["TestGIT"].Push({
+                                        //	Message: MessageInfo /* STRING */
+                                        //});
+                                        me.ConfigChanged({
+                                        	message: MessageInfo /* STRING */
                                         });
                                         ]]>
                                         </code>
@@ -273,22 +276,29 @@
                                         <Row>
                                             <code>
                                             <![CDATA[
+                                            logger.info("Started export");
+                                            
                                             var entities = Things["GIT.Utility.Thing"].GetProjectEntities({
                                             	project: "SW_PrintUnit" /* STRING */,
                                             	entityName: "SoftwareConfiguration" /* STRING */,
                                             	entityType: "Thing" /* STRING */
                                             });
                                             
-                                            var ex = Things["SoftwareConfigurationGIT"].ExportProjectEntities({
+                                            var ex = Things["TestGit"].ExportProjectEntities({
                                             	ProjectName: "SW_PrintUnit" /* STRING */,
                                             	includeDependents: true /* BOOLEAN */,
                                             	EntitiesToExport: entities /* INFOTABLE */
                                             });
                                             
+                                            logger.info("exported");
+                                            
+                                            logger.info("Started Push");
                                             // Result: STRING
-                                            let Result = Things["SoftwareConfigurationGIT"].Push({
-                                            	Message: MessageInfo /* STRING */
+                                            let Result = Things["TestGit"].Push({
+                                            	Message: eventData.message /* STRING */
                                             });
+                                            
+                                            logger.info("Pushed");
                                             ]]>
                                             </code>
                                         </Row>
@@ -325,18 +335,18 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-07-06T07:25:36.609Z</Value>
-                    <Timestamp>2021-07-06T07:25:36.609Z</Timestamp>
+                    <Value>2021-07-08T11:03:00.821Z</Value>
+                    <Timestamp>2021-07-08T11:03:00.821Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-07-06T07:25:36.609Z</Value>
-                    <Timestamp>2021-07-06T07:25:36.609Z</Timestamp>
+                    <Value>2021-07-08T11:03:00.821Z</Value>
+                    <Timestamp>2021-07-08T11:03:00.821Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-07-06T07:25:28.856Z</Value>
-                    <Timestamp>2021-07-06T07:25:28.857Z</Timestamp>
+                    <Value>2021-07-08T11:03:00.820Z</Value>
+                    <Timestamp>2021-07-08T11:03:00.821Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <ClientConfig>
@@ -346,7 +356,7 @@
                             <endPoints>
                                 <endPoint
                                  autoReconnectTimeout="00:00:30"
-                                 isAutoReconnectSupported="False"
+                                 isAutoReconnectSupported="True"
                                  maximumRetry="4"
                                  name="PrintEngineClient"
                                  uri="net.tcp://localhost:9041/PrintEngineService"></endPoint>
@@ -355,7 +365,7 @@
                             </endPoints>
                         </WcfConfiguration>
                     </Value>
-                    <Timestamp>2021-07-06T07:25:34.369Z</Timestamp>
+                    <Timestamp>2021-07-08T11:03:02.565Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </ClientConfig>
             </ThingProperties>
