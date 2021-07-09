@@ -271,30 +271,7 @@
                      name="ClientConfig"
                      ordinal="2"></PropertyDefinition>
                 </PropertyDefinitions>
-                <ServiceDefinitions>
-                    <ServiceDefinition
-                     aspect.isAsync="false"
-                     category=""
-                     description=""
-                     isAllowOverride="false"
-                     isLocalOnly="false"
-                     isOpen="false"
-                     isPrivate="false"
-                     name="Test">
-                        <ResultType
-                         baseType="NOTHING"
-                         description=""
-                         name="result"
-                         ordinal="0"></ResultType>
-                        <ParameterDefinitions>
-                            <FieldDefinition
-                             baseType="STRING"
-                             description=""
-                             name="MessageInfo"
-                             ordinal="1"></FieldDefinition>
-                        </ParameterDefinitions>
-                    </ServiceDefinition>
-                </ServiceDefinitions>
+                <ServiceDefinitions></ServiceDefinitions>
                 <EventDefinitions>
                     <EventDefinition
                      category="Faults"
@@ -303,55 +280,7 @@
                      name="ConfigChanged"></EventDefinition>
                 </EventDefinitions>
                 <ServiceMappings></ServiceMappings>
-                <ServiceImplementations>
-                    <ServiceImplementation
-                     description=""
-                     handlerName="Script"
-                     name="Test">
-                        <ConfigurationTables>
-                            <ConfigurationTable
-                             dataShapeName=""
-                             description=""
-                             isMultiRow="false"
-                             name="Script"
-                             ordinal="0">
-                                <DataShape>
-                                    <FieldDefinitions>
-                                        <FieldDefinition
-                                         baseType="STRING"
-                                         description="code"
-                                         name="code"
-                                         ordinal="0"></FieldDefinition>
-                                    </FieldDefinitions>
-                                </DataShape>
-                                <Rows>
-                                    <Row>
-                                        <code>
-                                        <![CDATA[
-                                        var entities = Things["GIT.Utility.Thing"].GetProjectEntities({
-                                        	project: "SW_PrintUnit" /* STRING */,
-                                        	entityName: "SoftwareConfiguration" /* STRING */,
-                                        	entityType: "Thing" /* STRING */
-                                        });
-                                        
-                                        var ex = Things["TestGit"].ExportProjectEntities({
-                                        	ProjectName: "SW_PrintUnit" /* STRING */,
-                                        	includeDependents: false /* BOOLEAN */,
-                                        	EntitiesToExport: entities /* INFOTABLE */
-                                        });
-                                        
-                                        // Result: STRING
-                                        var result = Things["TestGIT"].Push({
-                                        	Message: MessageInfo /* STRING */
-                                        });
-                                        ]]>
-                                        </code>
-                                    </Row>
-                                </Rows>
-                            </ConfigurationTable>
-                        </ConfigurationTables>
-                    </ServiceImplementation>
-                </ServiceImplementations>
+                <ServiceImplementations></ServiceImplementations>
                 <Subscriptions>
                     <Subscription
                      description=""
@@ -385,7 +314,7 @@
                                         <Row>
                                             <code>
                                             <![CDATA[
-                                            logger.info("Started export");
+                                            logger.warn("Started export");
                                             
                                             var entities = Things["GIT.Utility.Thing"].GetProjectEntities({
                                             	project: "SW_PrintUnit" /* STRING */,
@@ -393,7 +322,7 @@
                                             	entityType: "Thing" /* STRING */
                                             });
                                             
-                                            logger.info(entities);
+                                            logger.warn(entities);
                                             
                                             var ex = Things["TestGit"].ExportProjectEntities({
                                             	ProjectName: "SW_PrintUnit" /* STRING */,
@@ -401,9 +330,9 @@
                                             	EntitiesToExport: entities /* INFOTABLE */
                                             });
                                             
-                                            logger.info("exported");
+                                            logger.warn("exported");
                                             
-                                            logger.info("Started Push");
+                                            logger.warn("Started Push");
                                             // Result: STRING
                                             let Result = Things["TestGit"].Push({
                                             	Message: eventData.message /* STRING */
@@ -444,18 +373,18 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-07-09T06:17:16.384Z</Value>
-                    <Timestamp>2021-07-09T06:17:16.384Z</Timestamp>
+                    <Value>2021-07-09T07:24:53.344Z</Value>
+                    <Timestamp>2021-07-09T07:24:53.344Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-07-09T06:17:16.384Z</Value>
-                    <Timestamp>2021-07-09T06:17:16.384Z</Timestamp>
+                    <Value>2021-07-09T07:24:53.344Z</Value>
+                    <Timestamp>2021-07-09T07:24:53.344Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-07-09T06:12:20.148Z</Value>
-                    <Timestamp>2021-07-09T06:12:20.149Z</Timestamp>
+                    <Value>2021-07-09T07:20:17.028Z</Value>
+                    <Timestamp>2021-07-09T07:20:17.028Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <ClientConfig>
@@ -466,7 +395,7 @@
                                 <endPoint
                                  autoReconnectTimeout="00:00:30"
                                  isAutoReconnectSupported="True"
-                                 maximumRetry="11"
+                                 maximumRetry="1"
                                  name="PrintEngineClient"
                                  uri="net.tcp://localhost:9041/PrintEngineService"></endPoint>
                                 <!-- This is currently deactivated because it's no need to configure this elements after initial operation. If this values would be changed accidentally it can be worsen the print quality. US #2613 "Voreilung aus UI entfernen"
@@ -474,7 +403,7 @@
                             </endPoints>
                         </WcfConfiguration>
                     </Value>
-                    <Timestamp>2021-07-09T06:12:22.039Z</Timestamp>
+                    <Timestamp>2021-07-09T07:20:18.814Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </ClientConfig>
             </ThingProperties>
