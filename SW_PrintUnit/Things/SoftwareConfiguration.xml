@@ -373,18 +373,18 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-07-09T10:47:49.209Z</Value>
-                    <Timestamp>2021-07-09T10:47:49.209Z</Timestamp>
+                    <Value>2021-07-09T10:52:21.583Z</Value>
+                    <Timestamp>2021-07-09T10:52:21.583Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-07-09T10:47:49.209Z</Value>
-                    <Timestamp>2021-07-09T10:47:49.209Z</Timestamp>
+                    <Value>2021-07-09T10:52:21.583Z</Value>
+                    <Timestamp>2021-07-09T10:52:21.583Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-07-09T10:47:20.565Z</Value>
-                    <Timestamp>2021-07-09T10:47:20.565Z</Timestamp>
+                    <Value>2021-07-09T10:52:21.583Z</Value>
+                    <Timestamp>2021-07-09T10:52:21.583Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <ClientConfig>
@@ -403,7 +403,7 @@
                             </endPoints>
                         </WcfConfiguration>
                     </Value>
-                    <Timestamp>2021-07-09T10:47:31.740Z</Timestamp>
+                    <Timestamp>2021-07-09T10:52:23.389Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </ClientConfig>
             </ThingProperties>
