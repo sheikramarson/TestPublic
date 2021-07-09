@@ -393,6 +393,8 @@
                                             	entityType: "Thing" /* STRING */
                                             });
                                             
+                                            logger.info(entities);
+                                            
                                             var ex = Things["TestGit"].ExportProjectEntities({
                                             	ProjectName: "SW_PrintUnit" /* STRING */,
                                             	includeDependents: true /* BOOLEAN */,
@@ -442,18 +444,18 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-07-09T06:00:19.229Z</Value>
-                    <Timestamp>2021-07-09T06:00:19.229Z</Timestamp>
+                    <Value>2021-07-09T06:17:16.384Z</Value>
+                    <Timestamp>2021-07-09T06:17:16.384Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-07-09T06:00:19.229Z</Value>
-                    <Timestamp>2021-07-09T06:00:19.229Z</Timestamp>
+                    <Value>2021-07-09T06:17:16.384Z</Value>
+                    <Timestamp>2021-07-09T06:17:16.384Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-07-09T06:00:19.228Z</Value>
-                    <Timestamp>2021-07-09T06:00:19.228Z</Timestamp>
+                    <Value>2021-07-09T06:12:20.148Z</Value>
+                    <Timestamp>2021-07-09T06:12:20.149Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <ClientConfig>
@@ -472,7 +474,7 @@
                             </endPoints>
                         </WcfConfiguration>
                     </Value>
-                    <Timestamp>2021-07-09T06:00:21.074Z</Timestamp>
+                    <Timestamp>2021-07-09T06:12:22.039Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </ClientConfig>
             </ThingProperties>
