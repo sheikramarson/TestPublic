@@ -356,7 +356,7 @@
                  foldType="NONE"
                  name="ClientConfig"
                  pushThreshold="0.0"
-                 pushType="VALUE"
+                 pushType="ALWAYS"
                  sourceName=""
                  timeout="0"></RemotePropertyBinding>
             </RemotePropertyBindings>
@@ -373,18 +373,18 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-07-09T10:54:01.117Z</Value>
-                    <Timestamp>2021-07-09T10:54:01.117Z</Timestamp>
+                    <Value>2021-07-09T11:11:48.414Z</Value>
+                    <Timestamp>2021-07-09T11:11:48.414Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-07-09T10:54:01.117Z</Value>
-                    <Timestamp>2021-07-09T10:54:01.117Z</Timestamp>
+                    <Value>2021-07-09T11:11:48.414Z</Value>
+                    <Timestamp>2021-07-09T11:11:48.414Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-07-09T10:54:01.116Z</Value>
-                    <Timestamp>2021-07-09T10:54:01.116Z</Timestamp>
+                    <Value>2021-07-09T11:11:48.413Z</Value>
+                    <Timestamp>2021-07-09T11:11:48.413Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <ClientConfig>
@@ -395,7 +395,7 @@
                                 <endPoint
                                  autoReconnectTimeout="00:00:30"
                                  isAutoReconnectSupported="True"
-                                 maximumRetry="1"
+                                 maximumRetry="2"
                                  name="PrintEngineClient"
                                  uri="net.tcp://localhost:9041/PrintEngineService"></endPoint>
                                 <!-- This is currently deactivated because it's no need to configure this elements after initial operation. If this values would be changed accidentally it can be worsen the print quality. US #2613 "Voreilung aus UI entfernen"
@@ -403,7 +403,7 @@
                             </endPoints>
                         </WcfConfiguration>
                     </Value>
-                    <Timestamp>2021-07-09T10:54:02.939Z</Timestamp>
+                    <Timestamp>2021-07-09T11:11:59.069Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </ClientConfig>
             </ThingProperties>
