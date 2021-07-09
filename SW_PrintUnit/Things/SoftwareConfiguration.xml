@@ -260,8 +260,7 @@
                 <PropertyDefinitions>
                     <PropertyDefinition
                      aspect.cacheTime="-1.0"
-                     aspect.dataChangeType="VALUE"
-                     aspect.defaultValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?&gt;&lt;WcfConfiguration isDebugEnabled=&quot;true&quot;&gt;&#xA;  &lt;endPoints&gt;&#xA;&#xA;    &#xA;&#xA;    &lt;endPoint autoReconnectTimeout=&quot;00:00:30&quot; isAutoReconnectSupported=&quot;True&quot; maximumRetry=&quot;1&quot; name=&quot;PrintEngineClient&quot; uri=&quot;net.tcp://localhost:9041/PrintEngineService&quot;/&gt;&#xA;&#xA;    &#xA;    &lt;!-- This is currently deactivated because it's no need to configure this elements after initial operation. If this values would be changed accidentally it can be worsen the print quality. US #2613 &quot;Voreilung aus UI entfernen&quot;&#xA;    &lt;endPoint name=&quot;WebTrackRollerClient&quot; uri=&quot;net.tcp://localhost:9026/WebTrackRollerService&quot; /&gt;--&gt;&#xA;&#xA;  &lt;/endPoints&gt;&#xA;&lt;/WcfConfiguration&gt;"
+                     aspect.dataChangeType="ON"
                      aspect.isLogged="true"
                      aspect.isPersistent="true"
                      aspect.isRemote="true"
@@ -352,12 +351,12 @@
             <RemotePropertyBindings>
                 <RemotePropertyBinding
                  aspect.source=""
-                 aspect.startType="useDefaultValue"
+                 aspect.startType="readEdgeValue"
                  aspect.tagAddress=""
                  foldType="NONE"
                  name="ClientConfig"
                  pushThreshold="0.0"
-                 pushType="ALWAYS"
+                 pushType="VALUE"
                  sourceName=""
                  timeout="0"></RemotePropertyBinding>
             </RemotePropertyBindings>
@@ -374,18 +373,18 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-07-09T12:01:11.969Z</Value>
-                    <Timestamp>2021-07-09T12:01:11.969Z</Timestamp>
+                    <Value>2021-07-09T12:03:46.226Z</Value>
+                    <Timestamp>2021-07-09T12:03:46.226Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-07-09T12:01:11.969Z</Value>
-                    <Timestamp>2021-07-09T12:01:11.969Z</Timestamp>
+                    <Value>2021-07-09T12:03:46.226Z</Value>
+                    <Timestamp>2021-07-09T12:03:46.226Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-07-09T12:01:11.968Z</Value>
-                    <Timestamp>2021-07-09T12:01:11.968Z</Timestamp>
+                    <Value>2021-07-09T12:03:46.225Z</Value>
+                    <Timestamp>2021-07-09T12:03:46.225Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <ClientConfig>
@@ -396,7 +395,7 @@
                                 <endPoint
                                  autoReconnectTimeout="00:00:30"
                                  isAutoReconnectSupported="True"
-                                 maximumRetry="1"
+                                 maximumRetry="2"
                                  name="PrintEngineClient"
                                  uri="net.tcp://localhost:9041/PrintEngineService"></endPoint>
                                 <!-- This is currently deactivated because it's no need to configure this elements after initial operation. If this values would be changed accidentally it can be worsen the print quality. US #2613 "Voreilung aus UI entfernen"
@@ -404,7 +403,7 @@
                             </endPoints>
                         </WcfConfiguration>
                     </Value>
-                    <Timestamp>2021-07-09T12:01:21.853Z</Timestamp>
+                    <Timestamp>2021-07-09T12:04:04.842Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </ClientConfig>
             </ThingProperties>
