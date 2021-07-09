@@ -133,6 +133,32 @@
                          type="User"></Principal>
                     </EventSubscribe>
                 </Permissions>
+                <Permissions
+                 resourceName="ClientConfig">
+                    <PropertyRead>
+                        <Principal
+                         isPermitted="true"
+                         name="Palis-Admin"
+                         type="User"></Principal>
+                        <Principal
+                         isPermitted="true"
+                         name="sramar@padaluma.com"
+                         type="User"></Principal>
+                    </PropertyRead>
+                    <PropertyWrite>
+                        <Principal
+                         isPermitted="true"
+                         name="Palis-Admin"
+                         type="User"></Principal>
+                        <Principal
+                         isPermitted="true"
+                         name="sramar@padaluma.com"
+                         type="User"></Principal>
+                    </PropertyWrite>
+                    <ServiceInvoke></ServiceInvoke>
+                    <EventInvoke></EventInvoke>
+                    <EventSubscribe></EventSubscribe>
+                </Permissions>
             </RunTimePermissions>
             <VisibilityPermissions>
                 <Visibility>
@@ -351,9 +377,9 @@
             <RemotePropertyBindings>
                 <RemotePropertyBinding
                  aspect.source=""
-                 aspect.startType="readEdgeValue"
+                 aspect.startType="useDefaultValue"
                  aspect.tagAddress=""
-                 foldType="NONE"
+                 foldType="FOLD"
                  name="ClientConfig"
                  pushThreshold="0.0"
                  pushType="VALUE"
@@ -373,18 +399,18 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-07-09T12:03:46.226Z</Value>
-                    <Timestamp>2021-07-09T12:03:46.226Z</Timestamp>
+                    <Value>2021-07-09T12:59:05.928Z</Value>
+                    <Timestamp>2021-07-09T12:59:05.928Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-07-09T12:03:46.226Z</Value>
-                    <Timestamp>2021-07-09T12:03:46.226Z</Timestamp>
+                    <Value>2021-07-09T12:59:05.928Z</Value>
+                    <Timestamp>2021-07-09T12:59:05.928Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-07-09T12:03:46.225Z</Value>
-                    <Timestamp>2021-07-09T12:03:46.225Z</Timestamp>
+                    <Value>2021-07-09T12:59:05.927Z</Value>
+                    <Timestamp>2021-07-09T12:59:05.927Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <ClientConfig>
@@ -403,7 +429,7 @@
                             </endPoints>
                         </WcfConfiguration>
                     </Value>
-                    <Timestamp>2021-07-09T12:06:08.281Z</Timestamp>
+                    <Timestamp>2021-07-09T12:59:17.215Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </ClientConfig>
             </ThingProperties>
