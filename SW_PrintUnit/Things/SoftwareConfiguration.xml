@@ -17,7 +17,7 @@
          published="false"
          tags=""
          thingTemplate="RemoteThingWithTunnelsAndFileTransfer"
-         valueStream="">
+         valueStream="Printhead_VS">
             <avatar></avatar>
             <DesignTimePermissions>
                 <Create></Create>
@@ -261,6 +261,7 @@
                     <PropertyDefinition
                      aspect.cacheTime="-1.0"
                      aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?&gt;&lt;WcfConfiguration isDebugEnabled=&quot;true&quot;&gt;&#xA;  &lt;endPoints&gt;&#xA;&#xA;    &#xA;&#xA;    &lt;endPoint autoReconnectTimeout=&quot;00:00:30&quot; isAutoReconnectSupported=&quot;True&quot; maximumRetry=&quot;1&quot; name=&quot;PrintEngineClient&quot; uri=&quot;net.tcp://localhost:9041/PrintEngineService&quot;/&gt;&#xA;&#xA;    &#xA;    &lt;!-- This is currently deactivated because it's no need to configure this elements after initial operation. If this values would be changed accidentally it can be worsen the print quality. US #2613 &quot;Voreilung aus UI entfernen&quot;&#xA;    &lt;endPoint name=&quot;WebTrackRollerClient&quot; uri=&quot;net.tcp://localhost:9026/WebTrackRollerService&quot; /&gt;--&gt;&#xA;&#xA;  &lt;/endPoints&gt;&#xA;&lt;/WcfConfiguration&gt;"
                      aspect.isLogged="true"
                      aspect.isPersistent="true"
                      aspect.isRemote="true"
@@ -373,18 +374,18 @@
             <ImplementedShapes></ImplementedShapes>
             <ThingProperties>
                 <reportingLastEvaluation>
-                    <Value>2021-07-09T11:11:48.414Z</Value>
-                    <Timestamp>2021-07-09T11:11:48.414Z</Timestamp>
+                    <Value>2021-07-09T12:01:11.969Z</Value>
+                    <Timestamp>2021-07-09T12:01:11.969Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastEvaluation>
                 <reportingLastChange>
-                    <Value>2021-07-09T11:11:48.414Z</Value>
-                    <Timestamp>2021-07-09T11:11:48.414Z</Timestamp>
+                    <Value>2021-07-09T12:01:11.969Z</Value>
+                    <Timestamp>2021-07-09T12:01:11.969Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </reportingLastChange>
                 <lastConnection>
-                    <Value>2021-07-09T11:11:48.413Z</Value>
-                    <Timestamp>2021-07-09T11:11:48.413Z</Timestamp>
+                    <Value>2021-07-09T12:01:11.968Z</Value>
+                    <Timestamp>2021-07-09T12:01:11.968Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </lastConnection>
                 <ClientConfig>
@@ -395,7 +396,7 @@
                                 <endPoint
                                  autoReconnectTimeout="00:00:30"
                                  isAutoReconnectSupported="True"
-                                 maximumRetry="2"
+                                 maximumRetry="1"
                                  name="PrintEngineClient"
                                  uri="net.tcp://localhost:9041/PrintEngineService"></endPoint>
                                 <!-- This is currently deactivated because it's no need to configure this elements after initial operation. If this values would be changed accidentally it can be worsen the print quality. US #2613 "Voreilung aus UI entfernen"
@@ -403,7 +404,7 @@
                             </endPoints>
                         </WcfConfiguration>
                     </Value>
-                    <Timestamp>2021-07-09T11:11:59.069Z</Timestamp>
+                    <Timestamp>2021-07-09T12:01:21.853Z</Timestamp>
                     <Quality>GOOD</Quality>
                 </ClientConfig>
             </ThingProperties>
